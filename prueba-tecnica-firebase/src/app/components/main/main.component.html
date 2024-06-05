@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regístrate</title>
+</head>
+<body>
+    <div *ngIf="!logueado; else login">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Tenth navbar example">
+          <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarsExample08">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['/']">Log In</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['/register']">Registro</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    
+     <ng-template #login>
+    
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Tenth navbar example">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <div class="collapse navbar-collapse" id="navbarsExample08">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/perfil']">Perfil</a>
+              </li>
+              <li class="nav-item" >
+                <a class="nav-link" [routerLink]="['/logout']">Log Out</a>
+              </li>
+            </ul>
+          </div>
+    
+    
+        <a class="navbar-brand" href="#" *ngIf="usuario">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <img *ngIf="usuario.photoURL" src="{{usuario.photoURL}}"  width="30px" height="30px" class="img-fluid" style="border-radius: 100%;"/>
+                {{usuario.email}}
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                <li> 
+                  <button class="botoncerrar" (click)="logOut()">Cerrar sesión</button>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </a>
+        </div>
+      </nav>
+     </ng-template> 
+</body>
+</html>

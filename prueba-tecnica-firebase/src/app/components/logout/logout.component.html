@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <label>
+        <h1>¿Está seguro/a de que quiere hacer Log Out?</h1>
+        <br/>
+        <button class="btn btn-danger" (click)="logOut()"> 
+            Log Out
+        </button>
+        &nbsp;
+        <a class="btn btn-success" [routerLink]="['/perfil']"> 
+            Volver
+        </a>
+    </label>
+</body>
+</html>

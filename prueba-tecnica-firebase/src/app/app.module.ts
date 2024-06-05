@@ -1,26 +1,42 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { BrowserModule} from '@angular/platform-browser';
+import { routing, appRoutingProviders } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from '../environments/environment';
+
+import { AuthService } from './services/auth.service';
 import { AppComponent } from './app.component';
-import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
-import { getAuth, provideAuth } from '@angular/fire/auth';
-import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { MainComponent } from './components/main/main.component';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
+import { LogoutComponent } from './components/logout/logout.component';
+
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MainComponent,
+    RegisterComponent,
+    LoginComponent,
+    PerfilComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    routing,
+    HttpClientModule,
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule
   ],
-  providers: [
-    provideClientHydration(),
-    provideFirebaseApp(() => initializeApp({"projectId":"prueba-tecnica-firebase","appId":"1:871432872140:web:9c791d008977ba1d28a269","storageBucket":"prueba-tecnica-firebase.appspot.com","apiKey":"AIzaSyAi8N31YGSEK1arD_5lqbEiwqRqJwCiUAI","authDomain":"prueba-tecnica-firebase.firebaseapp.com","messagingSenderId":"871432872140","measurementId":"G-LFR2TB2633"})),
-    provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore())
-  ],
+  providers: [appRoutingProviders, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

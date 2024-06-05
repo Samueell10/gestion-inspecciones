@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <form #formLogIn="ngForm">
+        <label>Email</label>
+        <input type="email" name="Email" #Email placeholder="example@example.com" class="form-control">
+        <br/>
+        <label>Contraseña</label>
+        <input type="password" name="Password" #Password placeholder="123456" class="form-control" minlength="6" maxlength="20" pattern="[A-Za-z0-9]{6,20}">
+        <br/>
+        <button class="btn btn-success" (click)="logIn()">
+            Log In
+        </button>
+        &nbsp;
+        <button class="btn btn-danger" (click)="logInGoogle()">
+            Log In con Google
+        </button> 
+    </form>
+</body>
+</html>
