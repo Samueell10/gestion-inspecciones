@@ -30,7 +30,7 @@
         </div>
         <div class="mb-3">
             <label class="form-label">Image</label>
-            <input type="text" class="form-control" formControlName="image">
+            <input type="file" (change)="onFileSelected($event)" class="form-control" accept="image/*">
         </div>
         <input type="submit" value="Enviar" class="btn btn-info">
     </form>

@@ -21,6 +21,8 @@ import { NewInspectionComponent } from './components/new-inspection/new-inspecti
 import { InspectionListComponent } from './components/inspection-list/inspection-list.component';
 
 import { AuthGuard } from './guards/auth.guard';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getStorage, provideStorage } from '@angular/fire/storage';
 
 
 

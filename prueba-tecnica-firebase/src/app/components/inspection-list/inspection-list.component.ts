@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'; 
 import Inspection from '../../interfaces/inspection.interface';
 import { InspectionsService } from '../../services/inspections.service';
+import { AngularFireStorage } from '@angular/fire/compat/storage';
+import { finalize } from 'rxjs/operators';
+
+
 
 @Component({
   selector: 'app-inspection-list',
@@ -18,7 +22,8 @@ export class InspectionListComponent implements OnInit {
 
   constructor(
     private inspectionsService: InspectionsService,
-    private formBuilder: FormBuilder 
+    private formBuilder: FormBuilder,
+    private storage: AngularFireStorage 
   ) {}
 
   ngOnInit(): void {
@@ -85,4 +90,26 @@ export class InspectionListComponent implements OnInit {
       this.filteredInspections = this.inspections.filter(inspection => inspection.Type_of_inspection === this.filter);
     }
   }
+
+  // Método para manejar la selección de archivos
+onFileSelected(event: any) {
+  const file = event.target.files[0]; // Obtiene el archivo seleccionado
+
+  // Si el usuario ha seleccionado un archivo
+  if (file) {
+      const filePath = 'carpeta_principal/' + file.name; // Define la ruta de almacenamiento de la imagen
+      const fileRef = this.storage.ref(filePath); // Crea una referencia al archivo en Firebase Storage
+      const uploadTask = this.storage.upload(filePath, file); // Sube el archivo a Firebase Storage
+
+      // Observa el estado de la carga del archivo y maneja los eventos
+      uploadTask.snapshotChanges().pipe(
+          finalize(() => {
+              fileRef.getDownloadURL().subscribe(downloadURL => {
+                  // Actualiza el valor del campo de imagen en tu formulario con la URL de descarga de la imagen
+                  this.formulario.patchValue({ image: downloadURL });
+              });
+          })
+      ).subscribe();
+  }
+}
 }
