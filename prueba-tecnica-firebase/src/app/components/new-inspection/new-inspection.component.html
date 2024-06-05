@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <main>
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label class="form-label">Tipo de Inspección*</label>
+            <input type="text" class="form-control" formControlName="Type_of_inspection">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Fecha*</label>
+            <input type="date" class="form-control" formControlName="date">
+        </div>            
+        <div class="mb-3">
+            <label class="form-label">Latitud*</label>
+            <input type="text" class="form-control" formControlName="latitude">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Longitud*</label>
+            <input type="text" class="form-control" formControlName="longitude">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Resultados*</label>
+            <textarea class="form-control" cols="30" rows="10" formControlName="result"></textarea>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Image</label>
+            <input type="text" class="form-control" formControlName="image">
+        </div>
+        <input type="submit" value="Enviar" class="btn btn-info">
+    </form>
+    <div *ngIf="mensaje" class="mensaje">{{ mensaje }}</div>
+
+</main>
+</body>
+</html>

@@ -2,3 +2,14 @@
     text-align: center;
     margin: 0 auto;
 }
+
+main {
+    max-width: 1000px;
+    margin: 20px auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 40px;
+}
+

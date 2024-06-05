@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
     var contra = this.Password.nativeElement.value;
     this.auth.register(mail, contra).then(res=>{
       console.log(res);
-      this._router.navigate(['perfil']);
+      this._router.navigate(['new-inspection']);
     });
   }
 

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <main>
+      
+        <div class="inspections">
+            <div class="inspection" *ngFor="let inspection of filteredInspections">
+                <div class="image" [ngStyle]="{ backgroundImage: 'url('+inspection.image+')' }"></div>
+                <div class="info">
+                    <h4>{{inspection.Type_of_inspection}}</h4>
+                    <p>Resultados: {{inspection.result}}</p>
+                    <p>Coordenadas: {{inspection.latitude}} / {{inspection.longitude}}</p>
+                    <p>Fecha: {{inspection.date}}</p>
+                    <button class="btn btn-outline-danger" (click)="onClickDelete(inspection)">Borrar</button>
+                    <button class="btn btn-outline-primary" (click)="onClickUpdate(inspection)">Actualizar</button>
+                </div>
+            </div>
+        </div>
+        <!-- Formulario de edición -->
+        <div *ngIf="editedInspection" class="edit-form">
+            <h2>Editar Inspección</h2>
+            <form [formGroup]="formulario" (ngSubmit)="onSubmitUpdate()">
+                <div class="mb-3">
+                    <label class="form-label">Tipo de Inspección*</label>
+                    <input type="text" class="form-control" formControlName="Type_of_inspection">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Fecha*</label>
+                    <input type="date" class="form-control" formControlName="date">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Latitud*</label>
+                    <input type="text" class="form-control" formControlName="latitude">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Longitud*</label>
+                    <input type="text" class="form-control" formControlName="longitude">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Resultados*</label>
+                    <textarea class="form-control" cols="30" rows="10" formControlName="result"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Image</label>
+                    <input type="text" class="form-control" formControlName="image">
+                </div>
+                <input type="submit" value="Modificar" class="btn btn-info">
+            </form>
+        </div>
+        <div class="filter-container">
+            <label for="filter">Filtrar por tipo de inspección:</label>
+            <select id="filter" (change)="updateFilter($event)">
+                <option value="Todos">Todos</option>
+                <option value="Diario">Diario</option>
+                <option value="Mensual">Mensual</option>
+                <option value="Anual">Anual</option>
+            </select>
+        </div>
+        
+    </main>
+    
+</body>
+</html>

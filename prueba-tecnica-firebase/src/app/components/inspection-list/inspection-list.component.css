@@ -1,0 +1,33 @@
+.inspection {
+    border: 1px solid black;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    overflow: hidden;
+    margin-bottom: 20px;
+    max-width: 100%;
+}
+
+.inspection .info {
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.inspection .image {
+    width: 100%;
+    height: auto; /* Ajusta la altura automáticamente */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .inspection {
+        grid-template-columns: 1fr; /* Apilar los elementos en una columna */
+    }
+    .inspection .image {
+        height: 200px; /* Ajusta la altura según tus necesidades */
+    }
+}

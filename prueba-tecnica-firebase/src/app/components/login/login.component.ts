@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
     var Pass = this.Password.nativeElement.value;
     this.auth.login(Email, Pass).then(res=> {
       console.log(res);
-      this._router.navigate(['perfil']);
+      this._router.navigate(['new-inspection']);
     });
   }
 
@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
     var Pass = this.Password.nativeElement.value;
     this.auth.loginWithGoogle(Email, Pass).then(res=>{
       console.log(res);
-      this._router.navigate(['perfil']);
+      this._router.navigate(['inspection-list']);
     });
   }
 }

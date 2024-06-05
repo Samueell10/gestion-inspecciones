@@ -8,3 +8,68 @@
 .container-fluid{
     width: 90%;
 }
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+.navbar-nav {
+    flex-direction: column;
+}
+
+.navbar-nav .nav-item {
+    margin-bottom: 10px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    margin-right: 10px;
+}
+
+.dropdown-menu {
+    width: 100%;
+}
+
+.dropdown-menu button {
+    width: 100%;
+    text-align: left;
+}
+
+@media (min-width: 768px) {
+    .navbar-nav {
+        flex-direction: row;
+    }
+
+    .navbar-nav .nav-item {
+        margin-bottom: 0;
+    }
+}
+
+#filter {
+    margin-top: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+label[for="filter"] {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.filter-container {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .filter-container {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
