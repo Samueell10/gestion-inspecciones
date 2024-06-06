@@ -17,17 +17,16 @@
 
 .inspection .image {
     width: 100%;
-    height: auto; /* Ajusta la altura automáticamente */
+    height: auto; 
     background-size: cover;
     background-position: center;
 }
 
-/* Media query para pantallas más pequeñas */
 @media (max-width: 768px) {
     .inspection {
-        grid-template-columns: 1fr; /* Apilar los elementos en una columna */
+        grid-template-columns: 1fr; 
     }
     .inspection .image {
-        height: 200px; /* Ajusta la altura según tus necesidades */
+        height: 200px; 
     }
 }

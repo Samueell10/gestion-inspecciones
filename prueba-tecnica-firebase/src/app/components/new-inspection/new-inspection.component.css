@@ -1,73 +1,74 @@
 /* Estilos generales para el formulario */
 form {
-    max-width: 600px; /* Ancho máximo del formulario */
-    margin: auto; /* Centrar el formulario */
-    padding: 20px; /* Espaciado interno */
-    border: 1px solid #ccc; /* Borde del formulario */
-    border-radius: 10px; /* Bordes redondeados */
-    background-color: #f9f9f9; /* Color de fondo */
+    max-width: 600px; 
+    margin: auto; 
+    padding: 20px; 
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+    background-color: #f9f9f9;
 }
 
 /* Estilos para los elementos del formulario */
 form .mb-3 {
-    margin-bottom: 15px; /* Espaciado inferior */
+    margin-bottom: 15px; 
 }
 
 form .form-label {
-    display: block; /* Etiquetas en bloque */
-    margin-bottom: 5px; /* Espaciado inferior */
-    font-weight: bold; /* Negrita */
+    display: block; 
+    margin-bottom: 5px; 
+    font-weight: bold; 
 }
 
 form .form-control {
-    width: 100%; /* Ancho completo */
-    padding: 10px; /* Espaciado interno */
-    border: 1px solid #ccc; /* Borde */
-    border-radius: 5px; /* Bordes redondeados */
-    box-sizing: border-box; /* Incluir borde en el cálculo del ancho */
+    width: 100%; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    box-sizing: border-box; 
 }
 
 /* Estilos para el botón de enviar */
 form .btn {
-    display: block; /* Botón en bloque */
-    width: 100%; /* Ancho completo */
-    padding: 10px; /* Espaciado interno */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Bordes redondeados */
-    background-color: #17a2b8; /* Color de fondo */
-    color: white; /* Color del texto */
-    font-size: 16px; /* Tamaño de la fuente */
-    cursor: pointer; /* Cursor de puntero */
+    display: block; 
+    width: 100%; 
+    padding: 10px; 
+    border: none; 
+    border-radius: 5px; 
+    background-color: #17a2b8; 
+    color: white; 
+    font-size: 16px; 
+    cursor: pointer; 
 }
 
 form .btn:hover {
-    background-color: #138496; /* Color de fondo al pasar el mouse */
+    background-color: #138496; 
 }
 
 /* Media query para pantallas pequeñas */
 @media (max-width: 600px) {
     form {
-        padding: 10px; /* Reducir espaciado interno */
+        padding: 10px; 
     }
 
     form .form-control {
-        padding: 8px; /* Reducir espaciado interno */
+        padding: 8px; 
     }
 
     form .btn {
-        padding: 8px; /* Reducir espaciado interno */
-        font-size: 14px; /* Reducir tamaño de la fuente */
+        padding: 8px; 
+        font-size: 14px; 
     }
 }
 
 /* Estilos para el mensaje */
 .mensaje {
-    max-width: 600px; /* Ancho máximo del mensaje */
-    margin: 20px auto; /* Espaciado superior y centrar */
-    padding: 15px; /* Espaciado interno */
-    border: 1px solid #ccc; /* Borde */
-    border-radius: 5px; /* Bordes redondeados */
-    background-color: #d4edda; /* Color de fondo */
-    color: #155724; /* Color del texto */
-    font-size: 16px; /* Tamaño de la fuente */
+    max-width: 600px; 
+    margin: 20px auto; 
+    padding: 15px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+    background-color: #d4edda; 
+    color: #155724; 
+    font-size: 16px; 
+    height: 10%;
 }

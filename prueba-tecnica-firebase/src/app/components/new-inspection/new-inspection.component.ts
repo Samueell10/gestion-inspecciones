@@ -61,7 +61,7 @@ export class NewInspectionComponent implements OnInit {
         this.mensaje = 'Error al enviar la inspección. Inténtalo de nuevo más tarde.';
       }
     } else {
-      this.mensaje = 'Por favor, completa todos los campos obligatorios y selecciona una imagen.';
+      this.mensaje = 'Por favor, completa todos los campos obligatorios';
     }
   }
 

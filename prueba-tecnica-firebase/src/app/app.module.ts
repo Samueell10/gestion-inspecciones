@@ -15,7 +15,6 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
-import { PerfilComponent } from './components/perfil/perfil.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { NewInspectionComponent } from './components/new-inspection/new-inspection.component';
 import { InspectionListComponent } from './components/inspection-list/inspection-list.component';
@@ -33,7 +32,6 @@ import { getStorage, provideStorage } from '@angular/fire/storage';
     MainComponent,
     RegisterComponent,
     LoginComponent,
-    PerfilComponent,
     LogoutComponent,
     NewInspectionComponent,
     InspectionListComponent
